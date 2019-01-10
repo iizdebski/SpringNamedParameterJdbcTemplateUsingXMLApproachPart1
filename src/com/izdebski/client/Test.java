@@ -14,14 +14,21 @@ public class Test {
 
         EmployeeService employeeService = ctx.getBean("employeeService", EmployeeServiceImpl.class);
 
-        Employee employee = new Employee();
-        employee.setEmail("john.s@yahoo.com");
-        employee.setEmployeeName("John");
-        employee.setGender("Male");
-        employee.setSalary(90000.00);
+        //createEmployee(employeeService);
 
-        employeeService.addEmployee(employee);
-
+        Employee employee = employeeService.fetchEmployeeById(2);
+        System.out.println(employee.getEmployeeId()+"\t"+employee.getEmployeeName());
         ctx.close();
     }
+
+        private static void createEmployee(EmployeeService employeeService){
+
+            Employee employee = new Employee();
+            employee.setEmail("peter.s@yahoo.com");
+            employee.setEmployeeName("Peter");
+            employee.setGender("Male");
+            employee.setSalary(90000.00);
+
+            employeeService.addEmployee(employee);
+        }
 }
