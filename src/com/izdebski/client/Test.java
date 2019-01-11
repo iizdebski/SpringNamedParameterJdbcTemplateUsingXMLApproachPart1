@@ -17,10 +17,10 @@ public class Test {
         EmployeeService employeeService = ctx.getBean("employeeService", EmployeeServiceImpl.class);
 
         //createEmployee(employeeService);
-        //getEmployeeById(employeeService);
-        fetchAllEmployeeInfo(employeeService);
+        getEmployeeById(employeeService);
+        //fetchAllEmployeeInfo(employeeService);
         //employeeService.updateEmployeeEmailById("Jimmy.s2031@yahoo.com", 2);
-        employeeService.deleteEmployeeById(1);
+        //employeeService.deleteEmployeeById(1);
         ctx.close();
     }
 
