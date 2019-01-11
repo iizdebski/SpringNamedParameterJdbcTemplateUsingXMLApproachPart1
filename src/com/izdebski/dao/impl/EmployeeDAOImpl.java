@@ -2,14 +2,19 @@ package com.izdebski.dao.impl;
 
 import com.izdebski.dao.EmployeeDAO;
 import com.izdebski.model.Employee;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
 
 import javax.sql.DataSource;
 import java.util.List;
 
+@Repository
 public class EmployeeDAOImpl implements EmployeeDAO {
 
     // private DataSource dataSource;
+
+    @Autowired
     private JdbcTemplate jdbcTemplate;
 
     /*public void setDataSource(DataSource dataSource) {

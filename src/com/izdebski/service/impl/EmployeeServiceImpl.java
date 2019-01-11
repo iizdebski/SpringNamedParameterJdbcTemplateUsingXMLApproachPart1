@@ -3,11 +3,15 @@ package com.izdebski.service.impl;
 import com.izdebski.dao.EmployeeDAO;
 import com.izdebski.model.Employee;
 import com.izdebski.service.EmployeeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-public class EmployeeServiceImpl implements EmployeeService {
+@Service("employeeService")
+public class EmployeeServiceImpl implements EmployeeService{
 
+    @Autowired
     private EmployeeDAO employeeDAO;
 
     public void setEmployeeDAO(EmployeeDAO employeeDAO) {
