@@ -9,13 +9,13 @@ import java.util.List;
 
 public class EmployeeDAOImpl implements EmployeeDAO {
 
-    private DataSource dataSource;
+    // private DataSource dataSource;
     private JdbcTemplate jdbcTemplate;
 
-    public void setDataSource(DataSource dataSource) {
+    /*public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
         this.jdbcTemplate = new JdbcTemplate(dataSource);
-    }
+    }*/
 
     /*@Override
     public void createEmployee(Employee employee) {
@@ -64,6 +64,10 @@ public class EmployeeDAOImpl implements EmployeeDAO {
     @Override // ATTENTION!!!!!!!!!!
     public void createEmployee(Employee employee) {
 
+    }
+
+    public void setJdbcTeplate(JdbcTemplate jdbcTemplate){
+        this.jdbcTemplate=jdbcTemplate;
     }
 
     @Override
