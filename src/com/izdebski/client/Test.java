@@ -18,7 +18,7 @@ public class Test {
 
         //createEmployee(employeeService);
         //getEmployeeById(employeeService);
-        //fetchAllEmployeeInfo(employeeService);
+        fetchAllEmployeeInfo(employeeService);
         //employeeService.updateEmployeeEmailById("Jimmy.s2031@yahoo.com", 2);
         employeeService.deleteEmployeeById(1);
         ctx.close();
