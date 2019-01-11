@@ -75,16 +75,24 @@ public class EmployeeDAOImpl implements EmployeeDAO {
 
     @Override
     public void deleteEmployeeById(int employeeId) {
-
+        String SQL = "DELETE FROM employee_table WHERE employee_Id=?";
+        int update = jdbcTemplate.update(SQL, employeeId);
+        if(update>0)
+            System.out.println("Employee is deleted ...");
     }
 
     @Override
     public void updateEmployeeEmailById(String newEmail, int employeeId) {
-
+        String SQL = "UPDATE employee_table set email=? WHERE employee_Id=?";
+        int update = jdbcTemplate.update(SQL, newEmail, employeeId);
+        if(update>0)
+            System.out.println("Email is updated ...");
     }
 
     @Override
     public List<Employee> getAllEmployeesDetails() {
-        return null;
+        String SQL="SELECT*FROM employee_table";
+
+        return jdbcTemplate.query(SQL, new EmployeeRowMapper());
     }
 }
